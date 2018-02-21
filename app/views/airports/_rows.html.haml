@@ -1,0 +1,27 @@
+.text-center 
+  = will_paginate airports, renderer: RemoteLinkPagination::LinkRenderer
+    
+%table.table.table-bordered
+  %thead.thead-dark
+    %tr
+    %th Iata
+    %th Iso
+    %th Name
+    %th Type
+    %th Size
+    %th Longitude
+    %th Latitude
+    %th{colspan: "3"} Actions
+  %tbody
+    - airports.each do |airport|  
+      %tr
+        %td= airport.iata
+        %td= airport.iso
+        %td= airport.name
+        %td= airport.airport_type
+        %td= airport.size
+        %td= airport.longitude
+        %td= airport.latitude
+        %td= link_to 'Show', airport, class: "btn btn-primary"
+        %td= link_to 'Edit', edit_airport_path(airport), class: "btn btn-warning"
+        %td= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"

@@ -1,0 +1,1 @@
+$('#rows').html('<%= j render 'rows', airports: @airports %>')

@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %strong Iata:
+  = @airport.iata  
+%p
+  %strong Iso:
+  = @airport.iso    
+%p
+  %strong Name:
+  = @airport.name
+%p
+  %strong Type:
+  = @airport.airport_type
+%p
+  %strong Size:
+  = @airport.size
+%p
+  %strong Longitude:
+  = @airport.longitude
+%p
+  %strong Latitude:
+  = @airport.latitude
+
+= link_to 'Edit', edit_airport_path(@airport) |
+= link_to 'Back', airports_path

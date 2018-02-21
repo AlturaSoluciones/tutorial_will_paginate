@@ -1,0 +1,33 @@
+
+= form_with(model: airport, local: true) do |form|
+  - if airport.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(airport.errors.count, "error")
+        prohibited this airport from being saved:
+      %ul
+        - airport.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :iata
+    = form.text_field :iata, id: :airport_iata
+  .field
+    = form.label :iso
+    = form.text_field :iso, id: :airport_iso
+  .field
+    = form.label :name
+    = form.text_field :name, id: :airport_name
+  .field
+    = form.label :type
+    = form.text_field :type, id: :airport_type
+  .field
+    = form.label :size
+    = form.text_field :size, id: :airport_size
+  .field
+    = form.label :longitude
+    = form.text_field :longitude, id: :airport_longitude
+  .field
+    = form.label :latitude
+    = form.text_field :latitude, id: :airport_latitude
+  .actions
+    = form.submit

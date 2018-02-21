@@ -1,0 +1,7 @@
+.container
+  %p#notice= notice
+  %h1 Airports
+  #rows
+    = render 'rows', airports: @airports
+  %br/
+  = link_to 'New Airport', new_airport_path
